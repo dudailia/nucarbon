@@ -77,8 +77,7 @@ function EasterToast() {
         <p className="text-sm font-bold text-white mb-1">You found it.</p>
         <p className="text-xs text-gray-400 leading-relaxed">
           This was built by{" "}
-          <span className="text-green-400 font-semibold">Ilia Duda</span> in 3 hours
-          before a job interview.
+          <span className="text-green-400 font-semibold">Ilia Duda</span> over one week.
         </p>
       </div>
     </motion.div>

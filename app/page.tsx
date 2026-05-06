@@ -361,14 +361,14 @@ export default function Home() {
           <span>Based on IEA 2024 published energy estimates</span>
         </motion.div>
 
-        {/* Built in 3 hours badge — Ilia's signature */}
+        {/* Built over one week · Ilia Duda */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2.5, duration: 1 }}
           className="absolute bottom-5 right-6 text-[11px] text-gray-700 font-mono no-print select-none"
         >
-          Built in 3 hours · Ilia Duda · 2026
+          Built in one week · Ilia Duda · 2026
         </motion.div>
       </section>
 
