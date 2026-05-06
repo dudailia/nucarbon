@@ -3,25 +3,196 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a1a0f;
+  --foreground: #ffffff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #0a1a0f;
+  color: #ffffff;
+  font-family: var(--font-inter), Inter, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a1a0f;
+}
+::-webkit-scrollbar-thumb {
+  background: #22c55e;
+  border-radius: 3px;
+}
+
+/* ── Print styles ─────────────────────────────────────────────────────────── */
+@media print {
+  nav,
+  footer,
+  .no-print {
+    display: none !important;
   }
+
+  body {
+    background: #ffffff !important;
+    color: #111111 !important;
+    font-family: Georgia, "Times New Roman", serif;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  main {
+    min-height: unset !important;
+  }
+
+  .print-document {
+    box-shadow: none !important;
+    border: none !important;
+    background: white !important;
+    color: black !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .print-text { color: #111 !important; }
+  .print-muted { color: #555 !important; }
+  .print-label { color: #333 !important; }
+  .print-border { border-color: #ccc !important; }
+  .print-bg { background: #f9f9f9 !important; }
+  .print-accent { color: #CC0000 !important; }
+
+  @page {
+    margin: 0.75in;
+    size: letter portrait;
+  }
+}
+
+/* ── Particle animations ──────────────────────────────────────────────────── */
+@keyframes particle-float {
+  0%   { transform: translateY(0)   translateX(0)    scale(1);   opacity: 0;   }
+  8%   { opacity: 1; }
+  85%  { opacity: 0.5; }
+  100% { transform: translateY(-140px) translateX(var(--dx, 0px)) scale(0.6); opacity: 0; }
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, #4ade80 0%, #22c55e 60%, transparent 100%);
+  animation: particle-float var(--dur, 7s) ease-in-out var(--delay, 0s) infinite;
+  pointer-events: none;
+}
+
+/* ── Custom range slider ──────────────────────────────────────────────────── */
+.slider-track {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(
+    to right,
+    #22c55e var(--fill, 0%),
+    rgba(255,255,255,0.07) var(--fill, 0%)
+  );
+  outline: none;
+  cursor: pointer;
+}
+
+.slider-track::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #22c55e;
+  border: 2px solid #0a1a0f;
+  box-shadow: 0 0 0 1px #22c55e, 0 0 12px rgba(34,197,94,0.4);
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.slider-track::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 1px #22c55e, 0 0 20px rgba(34,197,94,0.6);
+}
+
+.slider-track::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #22c55e;
+  border: 2px solid #0a1a0f;
+  box-shadow: 0 0 0 1px #22c55e;
+  cursor: pointer;
+}
+
+.slider-track::-moz-range-track {
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.07);
+}
+
+/* Hide default select arrow in WebKit */
+select {
+  background-image: none;
+}
+select option {
+  background: #0d2218;
+  color: #d1fae5;
+}
+
+/* ── Northeastern map pulse rings ─────────────────────────────────────────── */
+@keyframes nu-ring-pulse {
+  0%   { transform: scale(1);   opacity: 0.7; }
+  100% { transform: scale(2.6); opacity: 0;   }
+}
+
+.nu-pulse-ring {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.nu-pulse-1 {
+  animation: nu-ring-pulse 2.2s ease-out infinite;
+}
+
+.nu-pulse-2 {
+  animation: nu-ring-pulse 2.2s ease-out 1.1s infinite;
+}
+
+/* ── Living lab campus map ────────────────────────────────────────────────── */
+@keyframes scan-sweep {
+  0%   { transform: translateY(-4px); opacity: 0;   }
+  3%   { opacity: 0.35; }
+  97%  { opacity: 0.35; }
+  100% { transform: translateY(568px); opacity: 0; }
+}
+.map-scan {
+  animation: scan-sweep 5s linear 1s infinite;
+  pointer-events: none;
+}
+
+@keyframes isec-pulse {
+  0%, 100% { opacity: 0.18; }
+  50%       { opacity: 0.38; }
+}
+.isec-glow { animation: isec-pulse 2.4s ease-in-out infinite; }
+
+@keyframes incubator-star {
+  0%, 100% { transform: scale(1);   opacity: 1;   }
+  50%       { transform: scale(1.3); opacity: 0.7; }
+}
+.incubator-star {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: incubator-star 1.8s ease-in-out infinite;
 }
