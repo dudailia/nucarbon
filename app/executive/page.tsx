@@ -454,7 +454,7 @@ export default function ExecutivePage() {
             {/* Print only: data note */}
             <div className="hidden print:block mt-6 border border-gray-200 rounded px-4 py-3 bg-gray-50">
               <p className="text-[10px] text-gray-500 leading-relaxed">
-                <strong>Data note:</strong> All figures are estimates derived from peer-reviewed literature (IEA 2024, Patterson et al. 2021, Strubell et al. 2019, EPA eGRID 2023) applied to modelled campus adoption rates. Actual figures may differ by ±40%. This prototype was built to demonstrate the feasibility of real-time AI carbon accounting — not to serve as a final measurement. Live dashboard available at nucarbon.vercel.app.
+                <strong>Data note:</strong> All figures are estimates derived from peer-reviewed literature (IEA 2024, Patterson et al. 2021, Strubell et al. 2019, EPA eGRID2021) applied to modelled campus adoption rates. Actual figures may differ by ±40%. This prototype was built to demonstrate the feasibility of real-time AI carbon accounting — not to serve as a final measurement. Live dashboard available at nucarbon.vercel.app.
               </p>
             </div>
           </footer>

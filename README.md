@@ -19,7 +19,7 @@ NUCarbon does **not** measure anything. It has no telemetry, no meter feed, and 
 - 20,000 students + 4,000 faculty and staff (24,000 total)
 - ~8 AI queries per person per day
 - per-query energy by tool, 0.001–0.02 kWh, from published inference-energy estimates
-- 0.386 kg CO₂ per kWh grid intensity
+- 0.386 kg CO₂ per kWh grid intensity, the EPA eGRID2021 US average (852.3 lb CO₂e/MWh)
 - per-tool daily adoption rates (e.g. ChatGPT 65%, Copilot 40%), which are assumptions, not survey data
 
 Change any one of those and every headline moves. The counter on the landing page ticks upward in real time, but it is extrapolating the model forward on the client clock — it is not a live reading. The in-app "Data Methodology" badge and the About page state the same caveats, and figure sources are cited to the underlying papers (Strubell et al., Patterson et al., Lacoste et al., Schwartz et al., IEA 2024).

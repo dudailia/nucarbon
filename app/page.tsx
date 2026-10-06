@@ -468,8 +468,8 @@ export default function Home() {
                 <p className="text-base leading-relaxed text-gray-400">
                   NUCarbon uses a bottom-up model combining published AI energy benchmarks
                   (IEA 2024, Patterson et al. 2021) with self-reported usage rates from
-                  EDUCAUSE surveys across R1 universities. The New England ISO grid intensity
-                  of{" "}
+                  EDUCAUSE surveys across R1 universities. The US average grid intensity
+                  (EPA eGRID2021) of{" "}
                   <span className="font-medium text-green-400">0.386 kg CO₂ / kWh</span>{" "}
                   converts energy to emissions.
                 </p>

@@ -652,8 +652,8 @@ export default function ResearchAgendaPage() {
                 <div className="mt-5 rounded-xl border border-green-900/30 bg-black/20 px-4 py-4">
                   <p className="text-xs text-gray-500 leading-relaxed">
                     Each campus sits on a different regional grid with a different carbon
-                    intensity. Boston (NE-ISO: 0.386 kg/kWh) vs. Oakland
-                    (WECC: 0.214 kg/kWh) produces a natural control for grid effects on
+                    intensity. Boston (ISO New England) vs. Oakland
+                    (WECC) produces a natural control for grid effects on
                     the same AI usage pattern — a ready-made comparative study.
                   </p>
                 </div>
