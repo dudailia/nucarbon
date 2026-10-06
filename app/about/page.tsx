@@ -24,9 +24,9 @@ const sources = [
     url: null,
   },
   {
-    title: "EPA eGRID 2022 — NEWE Subregion",
+    title: "EPA eGRID2021 — US average",
     venue: "U.S. Environmental Protection Agency",
-    finding: "New England grid emission factor: 0.386 kg CO₂/kWh (includes natural gas, nuclear, hydro, wind mix).",
+    finding: "US average grid emission factor: 852.3 lb CO₂e/MWh, or 0.386 kg CO₂/kWh.",
     url: null,
   },
   {
@@ -48,7 +48,7 @@ const assumptions = [
   { label: "Faculty & staff", value: nuData.facultyStaff.toLocaleString(), note: "NU HR headcount estimate" },
   { label: "Queries / person / day", value: nuData.avgQueriesPerPersonPerDay, note: "Avg across all tools, weighted by adoption" },
   { label: "Base energy (ChatGPT)", value: "3 Wh", note: "Patterson 2021 + Samsi 2023 midpoint" },
-  { label: "Grid intensity (NE-ISO)", value: "0.386 kg CO₂/kWh", note: "EPA eGRID 2022 NEWE" },
+  { label: "Grid intensity (US average)", value: "0.386 kg CO₂/kWh", note: "EPA eGRID2021 US average" },
   { label: "Semester start", value: nuData.semesterStartDate, note: "Spring 2026 first day of classes" },
 ];
 

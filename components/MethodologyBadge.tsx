@@ -111,8 +111,8 @@ export default function MethodologyBadge() {
                         detail: "\"Energy and Policy Considerations for Deep Learning in NLP\" — ACL 2019. Per-training and per-inference energy figures for large language models.",
                       },
                       {
-                        ref: "EPA eGRID 2023 — NEWE Subregion",
-                        detail: "New England ISO grid emission factor: 0.386 kg CO₂/kWh. Used to convert AI energy consumption to carbon equivalents.",
+                        ref: "EPA eGRID2021 — US average",
+                        detail: "US average grid emission factor: 0.386 kg CO₂/kWh (852.3 lb CO₂e/MWh). Used to convert AI energy consumption to carbon equivalents.",
                       },
                       {
                         ref: "EDUCAUSE AI Horizon Report (2024)",
